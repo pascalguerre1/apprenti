@@ -1,0 +1,37 @@
+
+nav {
+    padding: 5px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(95, 92, 92, 0.486);
+
+    .imageContainer {
+        margin-left: 15px;
+        border: solid 5px orange;
+        border-radius: 50%;
+        & img {
+            width: 70px;
+            border-radius: 50%;
+            border: solid 5px forestgreen;
+        }
+    }
+    
+    .linksContainer {
+        & a {
+            text-decoration: none;
+            color:white;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            &:hover{
+                background-color: forestgreen;
+            }
+        }
+    }
+}
+
+
+

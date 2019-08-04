@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout (~{::body})}">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <title>Bars N Beaches</title>
+  </head>
+
+  <body style="margin:1rem; padding:1rem">
+    <div id="nav-bar"></div>
+
+    <h1>Submit a New Bar</h1>
+    <p th:if="${error}" class="alert alert-danger">You have to be registered as a Bar Owner to add a Bar</p>
+    <hr>
+    <form action="#" th:action="@{/newBar}" th:object="${bar}" method="POST" class="container">
+      <div>
+        <label for="barName">Bar Name</label><br>
+        <p th:errors="*{barName}" class="alert alert-danger"></p>
+        <input type="text" id="barName" name="barName" th:value="*{barName}" placeholder="Bar Name" class="form-control"/>
+      </div>
+      <br>
+      <div>
+        <label for="description">Description</label><br>
+        <p th:errors="*{description}" class="alert alert-danger"></p>
+        <textarea type="text" id="description" th:field="*{description}" th:value="*{description}" rows="4" cols="80" maxlength="500" class="form-control"/>
+      </div>
+      <br>
+      <div>
+        <label for="location">Location</label><br>
+        <p th:errors="*{location}" class="alert alert-danger"></p>
+        <input type="text" id="location" th:field="*{location}" th:value="*{location}" placeholder="Location" class="form-control"/>
+      </div>
+      <br>
+      <div>
+        <label>Is it near a beach?</label>
+        <select typeof="text" name="hasBeach" th:value="*{hasBeach}" class="form-control">
+          <option>Yes</option>
+          <option>No</option>
+        </select>
+      </div>
+      <br>
+      <div>
+        <label>Please provide a picture of the bar</label>
+        <input type="text" name="barPic" th:field="*{barPic}" th:value="*{barPic}" class="form-control" placeholder="Enter Image URL to page" />
+      </div>
+      <br>
+      <div>
+        <input class="btn btn-default" type="submit" value="Submit Bar" />
+      </div>
+      <br>
+      <div>
+        <p><a th:href="'/welcome'" class="btn btn-default">Return to Profile</a></p>
+      </div>
+    </form>
+  </body>
+</html>
