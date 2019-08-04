@@ -84,6 +84,8 @@ class BarShowContainer extends Component {
               <div className="dateformat"><p><i>{dateFormat}</i></p></div>
               <p><strong>Rating: <StarRating stars={review.rating}/></strong></p>          
               <textarea className="form-control" rows="4" cols="85" maxLength="1000" style={{border: `none`, resize: `none`}} readOnly>{review.comment}</textarea>
+              <br></br>
+              <a><i className="fa fa-thumbs-up"></i></a> {review.likeCount}&emsp;&emsp;<a><i className="fa fa-thumbs-down"></i></a> {review.dislikeCount}
             </div>
           </div>
           <hr></hr>

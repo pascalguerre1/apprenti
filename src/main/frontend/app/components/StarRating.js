@@ -6,7 +6,7 @@ const StarRating = props => {
         starRating = (
             <div>
                 <i className="fa fa-star checked"></i>
-                <i className="fa fa-star"></i>
+                <i className="fa fa-star "></i>
                 <i className="fa fa-star "></i>
                 <i className="fa fa-star "></i>
                 <i className="fa fa-star "></i>
